@@ -1,0 +1,70 @@
+.list-container {
+    box-shadow: 3px 5px 17px -10px #888888;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    .heading {
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .contact-list {
+        .inactive-card {
+            opacity: 0.8;
+        }
+        .cards {
+            background-color: #f5f5f5c7;
+            border-radius: 5px;
+            position: relative;
+            color: #515151;
+            .name {
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .sub-detail {
+                font-size: 16px;
+                font-weight: 400;
+                display: inline-block;
+            }
+            .active-status,
+            .inactive-status {
+                position: absolute;
+                height: 18px;
+                width: 18px;
+                right: -1px;
+                top: 27px;
+                border: 3px solid white;
+                border-radius: 50%;
+                background-color: #33d733;
+            }
+            .inactive-status {
+                background-color: rgb(202, 202, 202);
+            }
+            .icons {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                color: #18a79a;
+                font-size: 18px;
+            }
+            .active,
+            .inactive {
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                background-color: #33d733;
+            }
+            .inactive {
+                background-color: rgb(202, 202, 202);
+            }
+            .pointer {
+                cursor: pointer;
+            }
+            .dropdown-menu {
+                min-width: 130px;
+                left: -80px !important;
+            }
+            .dropdown-toggle::after {
+                display: none;
+            }
+        }
+    }
+}

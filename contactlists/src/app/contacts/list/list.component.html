@@ -1,0 +1,45 @@
+<div class="container-fluid p-lg-5 p-3" style="height: 80vh">
+    <div class="row">
+        <div class="col-lg-8 col-12 pl-lg-5">
+            <div class="list-container px-lg-5 px-2 py-4">
+                <div class="heading">Contacts</div>
+                <div class="contact-list container  my-4" *ngIf="userContact.length>0">
+                    <div *ngFor="let list of userContact; let i = index">
+
+                        <div class="cards row mb-3 p-lg-4 p-2" [ngClass]="{'inactive-card': list.status !== 'Active'}">
+                            <div class="icons">
+                                <i class="fa fa-ellipsis-h dropdown-toggle pointer" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu icons ">
+                                    <div class="mx-2" style="display: inline-block" [ngClass]="list.status === 'Active' ? 'inactive' : 'active'">
+
+                                    </div>
+                                    <div class="pointer " style="display: inline-block" *ngIf=" list.status !== 'Active'" (click)="toggleForActive(i,'Active')">Active</div>
+                                    <div class="pointer " style="display: inline-block" *ngIf=" list.status === 'Active'" (click)="toggleForActive(i, 'Inactive')">Inactive</div>
+                                    <div class="fa fa-edit pointer mx-2" (click)="onClickEdit(list)"> Edit</div><br>
+                                    <div class="fa fa-trash pointer mx-2" (click)="onClickDelete(i)"> Delete</div>
+                                </div>
+
+                            </div>
+                            <div class="col-1">
+                                <i class="fa fa-user-circle-o" style="font-size: 40px;color: #838282"></i>
+                                <div class=" mr-1" [ngClass]="list.status === 'Active' ? 'active-status' : 'inactive-status'"></div>
+                            </div>
+                            <div class="col-11 px-4">
+                                <div class="name">{{list.firstName}} {{list.lastName}}</div>
+                                <div class="sub-detail col-lg-3 px-0"><i class="fa fa-phone mr-1"></i> {{list.phoneNo}} </div>
+                                <div class="sub-detail col-lg-5 px-0"><i class="fa fa-envelope mr-1"></i> {{list.email}} </div>
+                                <div class="sub-detail">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-12 pr-lg-5">
+            <app-edit-or-add [user]="userdata" [isEdit]="isedit" (addContact)="getContactData($event)" (addEditContact)="getEditContact($event)"></app-edit-or-add>
+        </div>
+
+    </div>
+</div>
