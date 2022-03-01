@@ -3,7 +3,7 @@ This is an assignment project to maintain contact information using the javascri
 
 # Get Started
 ## clone the repo
-git clone https://github.com/bryanforbes/intern-angular
+git clone https://github.com/Himanshi-Kansara/Evolent-task
 
 cd contactlists
 
