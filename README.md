@@ -12,5 +12,5 @@ Install the npm packages described in the package.json and verify that it works:
 
 npm install
 
-ng serve
+npm run start
 
